@@ -9,7 +9,7 @@ To do enrichment analysis on Chlamydomonas reinhardtii using these GMT files, yo
 4. Upload the GO.zip archive
 5. Copy and paste your v6.1 gene names into the Query box on the left-half of the page, and finally hit 'Run query' to see the results
 
-
+Obviously there are other options you might want to change when running the enrichment analysis, but this is basically how you would use these files I've prepared.
 
 
 ______________________________
