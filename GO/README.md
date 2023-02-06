@@ -47,9 +47,7 @@ write.table(df_cc[,2:3], "df_cc_goterms.txt", sep = "\t", row.names = FALSE, quo
 write.table(df_mf[,2:3], "df_mf_goterms.txt", sep = "\t", row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 
-
-
-To give you an idea of how these files look like, a few lines of the df_bp_goterms.txt file look like this:
+NOTE: To give you an idea of how these files look like, a few lines of the df_bp_goterms.txt file look like this:
 
 GO:0000379	tRNA-type intron splice site recognition and cleavage
 
