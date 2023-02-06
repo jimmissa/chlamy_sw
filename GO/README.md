@@ -16,9 +16,13 @@ ______________________________
 
 The rest of this just explains how I prepared these GMT files. 
 
-1) I first went to the Download options for the Chlamydomonas reinhardtii v6.1 genome on Phytozome (https://data.jgi.doe.gov/refine-download/phytozome?organism=CreinhardtiiCC-4532&expanded=707) and I downloaded the annotation info file ('CreinhardtiiCC_4532_707_v6.1.annotation_info.txt'). This file contains GO annotations of each gene in the 10th field. (Some genes have several GO annotations, some have none etc).
+1) 
 
-2) I needed to also prepare a list of all possible GO annotations of each ontology type (BP = biological process, CC = cellular component, MF = molecular function). To do this, I used an R library called GO.db and I created four files: one file containing all GO annotations in the GO.db library and another three containing GO annotations only of each respective ontology. In the resulting files, the first field of each row was a GO annotation and the second tab-separated field was the corresponding vocabulary of that GO annotation. (This already brings us close to the GMT file format.) This is the script that will prepare you the same set of files:
+I first went to the Download options for the Chlamydomonas reinhardtii v6.1 genome on Phytozome (https://data.jgi.doe.gov/refine-download/phytozome?organism=CreinhardtiiCC-4532&expanded=707) and I downloaded the annotation info file ('CreinhardtiiCC_4532_707_v6.1.annotation_info.txt'). This file contains GO annotations of each gene in the 10th field. (Some genes have several GO annotations, some have none etc).
+
+2)
+
+I needed to also prepare a list of all possible GO annotations of each ontology type (BP = biological process, CC = cellular component, MF = molecular function). To do this, I used an R library called GO.db and I created four files: one file containing all GO annotations in the GO.db library and another three containing GO annotations only of each respective ontology. In the resulting files, the first field of each row was a GO annotation and the second tab-separated field was the corresponding vocabulary of that GO annotation. (This already brings us close to the GMT file format.) This is the script that will prepare you the same set of files:
 
 suppressMessages(library(GO.db))
 
@@ -43,7 +47,9 @@ GO:0000380	alternative mRNA splicing, via spliceosome
 GO:0000381	regulation of alternative mRNA splicing, via spliceosome
 GO:0000387	spliceosomal snRNP assembly
 
-3) Before proceeding, I had to be sure that all the GO IDs in the v6.1 C. reinhardtii annotation info file were a subset of this supposedly complete set of all GO IDs as stored in the GO.db library. I extracted all GO IDs from the v6.1 annotation info file, and I also extracted the GO IDs of the df_goterms.txt file (which contains all GO annotations of all ontologies), made sure both were sorted, and then compared them using the comm command on Bash (with the -23 flags). As it happens, there are 50 or so GO annotations in the annotation info file that were not in the GO.db library (although this is out of like 50,000 or something in the GO.db library). I manually searched each one into geneontology.org and found that all of these annotations were either 1) obsolete or 2) had been replaced with a new GO term (which explains why they were not in the GO.db library). I made the decision to include these GO terms. If the GO annotation was obsolete, I manually added it to either df_bp_goterms.txt, df_cc_goterms.txt, or df_mf_goterms.txt depending on its ontology and I gave it its old vocabulary as specified on geneontology.org. The vocabulary includes the word 'obsolete' at the beginning so, if you're worried about this, you can just ignore any enriched vocabulary terms which begin with the word 'obsolete'. As for the GO IDs replaced with new GO IDs, I simply kept the old GO ID and added on the new vocabulary. Again, if you're worried about this, I reprint below the full list of replaced GO IDs so you can avoid them if you want to:
+3) 
+
+Before proceeding, I had to be sure that all the GO IDs in the v6.1 C. reinhardtii annotation info file were a subset of this supposedly complete set of all GO IDs as stored in the GO.db library. I extracted all GO IDs from the v6.1 annotation info file, and I also extracted the GO IDs of the df_goterms.txt file (which contains all GO annotations of all ontologies), made sure both were sorted, and then compared them using the comm command on Bash (with the -23 flags). As it happens, there are 50 or so GO annotations in the annotation info file that were not in the GO.db library (although this is out of like 50,000 or something in the GO.db library). I manually searched each one into geneontology.org and found that all of these annotations were either 1) obsolete or 2) had been replaced with a new GO term (which explains why they were not in the GO.db library). I made the decision to include these GO terms. If the GO annotation was obsolete, I manually added it to either df_bp_goterms.txt, df_cc_goterms.txt, or df_mf_goterms.txt depending on its ontology and I gave it its old vocabulary as specified on geneontology.org. The vocabulary includes the word 'obsolete' at the beginning so, if you're worried about this, you can just ignore any enriched vocabulary terms which begin with the word 'obsolete'. As for the GO IDs replaced with new GO IDs, I simply kept the old GO ID and added on the new vocabulary. Again, if you're worried about this, I reprint below the full list of replaced GO IDs so you can avoid them if you want to:
 
 BP
 GO:0006333	chromatin organization
@@ -99,7 +105,9 @@ GO:0031513	non-motile cilium
 GO:0043234	protein-containing complex
 
 
-4) OK, so now I have 1) the annotation info file containing all the GO annotations of each v6.1 gene and 2) three files containing the GO IDs and vocabularies of each of the three ontologies. What I did next was write a Bash script that would take these files and spit out a GMT-formatted file, which effectively tells you on each row all the gene IDs which can be annotated by a specific given GO ID. The Bash script I wrote is this:
+4) 
+
+OK, so now I have 1) the annotation info file containing all the GO annotations of each v6.1 gene and 2) three files containing the GO IDs and vocabularies of each of the three ontologies. What I did next was write a Bash script that would take these files and spit out a GMT-formatted file, which effectively tells you on each row all the gene IDs which can be annotated by a specific given GO ID. The Bash script I wrote is this:
 
 #!/bin/bash
 
