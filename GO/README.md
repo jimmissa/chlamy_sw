@@ -49,8 +49,11 @@ write.table(df_mf[,2:3], "df_mf_goterms.txt", sep = "\t", row.names = FALSE, quo
 To give you an idea of how these files look like, a few lines of the df_bp_goterms.txt file look like this:
 
 GO:0000379	tRNA-type intron splice site recognition and cleavage
+
 GO:0000380	alternative mRNA splicing, via spliceosome
+
 GO:0000381	regulation of alternative mRNA splicing, via spliceosome
+
 GO:0000387	spliceosomal snRNP assembly
 
 3) 
