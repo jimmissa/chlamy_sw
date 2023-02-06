@@ -1,0 +1,52 @@
+BP
+GO:0006333	chromatin organization
+GO:0006348	subtelomeric heterochromatin formation
+GO:0006461	protein-containing complex assembly
+GO:0006464	protein modification process
+GO:0006827	iron ion transmembrane transport
+GO:0007016	obsolete cytoskeletal anchoring at plasma membrane
+GO:0007050	regulation of cell cycle
+GO:0007067	mitotic cell cycle
+GO:0009108	obsolete coenzyme biosynthetic process
+GO:0009405	obsolete pathogenesis
+GO:0015672	inorganic cation transmembrane transport
+GO:0015696	ammonium transmembrane transport
+GO:0015991	proton transmembrane transport
+GO:0015992	proton transmembrane transport
+GO:0016568	chromatin organization
+GO:0035058	non-motile cilium assembly
+GO:0042384	cilium assembly
+GO:0043044	chromatin remodeling
+GO:0051188	obsolete cofactor biosynthetic process
+GO:0051297	centrosome cycle
+
+MF
+GO:0001104	transcription coregulator activity
+GO:0003840	obsolete gamma-glutamyltransferase activity
+GO:0004012	ATPase-coupled intramembrane lipid transporter activity
+GO:0004584	obsolete dolichyl-phosphate-mannose-glycolipid alpha-mannosyltransferase activity
+GO:0004871	obsolete signal transducer activity
+GO:0004872	signaling receptor activity
+GO:0005086	guanyl-nucleotide exchange factor activity
+GO:0008144	obsolete drug binding
+GO:0008536	small GTPase binding
+GO:0008565	obsolete protein transporter activity
+GO:0008601	protein phosphatase regulator activity
+GO:0009540	zeaxanthin epoxidase activity
+GO:0015002	obsolete heme-copper terminal oxidase activity
+GO:0015238	xenobiotic transmembrane transporter activity
+GO:0016820	ATPase-coupled transmembrane transporter activity
+GO:0016876	aminoacyl-tRNA ligase activity
+GO:0022891	transmembrane transporter activity
+GO:0042623	ATP hydrolysis activity
+GO:0043140	3'-5' DNA helicase activity
+GO:0043141	5'-3' DNA helicase activity
+GO:0048037	obsolete cofactor binding
+GO:0050662	obsolete coenzyme binding
+GO:0070011	peptidase activity
+GO:0098519	obsolete nucleotide phosphatase activity, acting on free nucleotides
+
+CC
+GO:0030529	ribonucleoprotein complex
+GO:0031513	non-motile cilium
+GO:0043234	protein-containing complex
