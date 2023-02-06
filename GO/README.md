@@ -31,13 +31,19 @@ columns(GO.db)
 go <- keys(GO.db, keytype="GOID")
 
 df <- select(GO.db, columns=c("GOID","TERM"), keys=go, keytype="GOID")
+
 df_bp <- select(GO.db, columns=c("GOID","TERM"), keys="BP", keytype="ONTOLOGY")
+
 df_cc <- select(GO.db, columns=c("GOID","TERM"), keys="MF", keytype="ONTOLOGY")
+
 df_mf <- select(GO.db, columns=c("GOID","TERM"), keys="CC", keytype="ONTOLOGY")
 
 write.table(df, "df_goterms.txt", sep = "\t", row.names = FALSE, quote = FALSE, col.names = FALSE)
+
 write.table(df_bp[,2:3], "df_bp_goterms.txt", sep = "\t", row.names = FALSE, quote = FALSE, col.names = FALSE)
+
 write.table(df_cc[,2:3], "df_cc_goterms.txt", sep = "\t", row.names = FALSE, quote = FALSE, col.names = FALSE)
+
 write.table(df_mf[,2:3], "df_mf_goterms.txt", sep = "\t", row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 To give you an idea of how these files look like, a few lines of the df_bp_goterms.txt file look like this:
