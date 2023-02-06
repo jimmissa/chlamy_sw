@@ -58,60 +58,9 @@ GO:0000387	spliceosomal snRNP assembly
 
 3) 
 
-Before proceeding, I had to be sure that all the GO IDs in the v6.1 C. reinhardtii annotation info file were a subset of this supposedly complete set of all GO IDs as stored in the GO.db library. I extracted all GO IDs from the v6.1 annotation info file, and I also extracted the GO IDs of the df_goterms.txt file (which contains all GO annotations of all ontologies), made sure both were sorted, and then compared them using the comm command on Bash (with the -23 flags). As it happens, there are 50 or so GO annotations in the annotation info file that were not in the GO.db library (although this is out of like 50,000 or something in the GO.db library). I manually searched each one into geneontology.org and found that all of these annotations were either 1) obsolete or 2) had been replaced with a new GO term (which explains why they were not in the GO.db library). I made the decision to include these GO terms. If the GO annotation was obsolete, I manually added it to either df_bp_goterms.txt, df_cc_goterms.txt, or df_mf_goterms.txt depending on its ontology and I gave it its old vocabulary as specified on geneontology.org. The vocabulary includes the word 'obsolete' at the beginning so, if you're worried about this, you can just ignore any enriched vocabulary terms which begin with the word 'obsolete'. As for the GO IDs replaced with new GO IDs, I simply kept the old GO ID and added on the new vocabulary. Again, if you're worried about this, I reprint below the full list of replaced GO IDs so you can avoid them if you want to:
+Before proceeding, I had to be sure that all the GO IDs in the v6.1 C. reinhardtii annotation info file were a subset of this supposedly complete set of all GO IDs as stored in the GO.db library. I extracted all GO IDs from the v6.1 annotation info file, and I also extracted the GO IDs of the df_goterms.txt file (which contains all GO annotations of all ontologies), made sure both were sorted, and then compared them using the comm command on Bash (with the -23 flags). As it happens, there are 50 or so GO annotations in the annotation info file that were not in the GO.db library (although this is out of like 50,000 or something in the GO.db library). I manually searched each one into geneontology.org and found that all of these annotations were either 1) obsolete or 2) had been replaced with a new GO term (which explains why they were not in the GO.db library). I made the decision to include these GO terms. If the GO annotation was obsolete, I manually added it to either df_bp_goterms.txt, df_cc_goterms.txt, or df_mf_goterms.txt depending on its ontology and I gave it its old vocabulary as specified on geneontology.org. The vocabulary includes the word 'obsolete' at the beginning so, if you're worried about this, you can just ignore any enriched vocabulary terms which begin with the word 'obsolete'. As for the GO IDs replaced with new GO IDs, I simply kept the old GO ID and added on the new vocabulary. Again, if you're worried about this, you can find a list of all the GO IDs I manually added back in the fixthese.txt file in this folder.
 
-BP
-GO:0006333	chromatin organization
-GO:0006348	subtelomeric heterochromatin formation
-GO:0006461	protein-containing complex assembly
-GO:0006464	protein modification process
-GO:0006827	iron ion transmembrane transport
-GO:0007016	obsolete cytoskeletal anchoring at plasma membrane
-GO:0007050	regulation of cell cycle
-GO:0007067	mitotic cell cycle
-GO:0009108	obsolete coenzyme biosynthetic process
-GO:0009405	obsolete pathogenesis
-GO:0015672	inorganic cation transmembrane transport
-GO:0015696	ammonium transmembrane transport
-GO:0015991	proton transmembrane transport
-GO:0015992	proton transmembrane transport
-GO:0016568	chromatin organization
-GO:0035058	non-motile cilium assembly
-GO:0042384	cilium assembly
-GO:0043044	chromatin remodeling
-GO:0051188	obsolete cofactor biosynthetic process
-GO:0051297	centrosome cycle
 
-MF
-GO:0001104	transcription coregulator activity
-GO:0003840	obsolete gamma-glutamyltransferase activity
-GO:0004012	ATPase-coupled intramembrane lipid transporter activity
-GO:0004584	obsolete dolichyl-phosphate-mannose-glycolipid alpha-mannosyltransferase activity
-GO:0004871	obsolete signal transducer activity
-GO:0004872	signaling receptor activity
-GO:0005086	guanyl-nucleotide exchange factor activity
-GO:0008144	obsolete drug binding
-GO:0008536	small GTPase binding
-GO:0008565	obsolete protein transporter activity
-GO:0008601	protein phosphatase regulator activity
-GO:0009540	zeaxanthin epoxidase activity
-GO:0015002	obsolete heme-copper terminal oxidase activity
-GO:0015238	xenobiotic transmembrane transporter activity
-GO:0016820	ATPase-coupled transmembrane transporter activity
-GO:0016876	aminoacyl-tRNA ligase activity
-GO:0022891	transmembrane transporter activity
-GO:0042623	ATP hydrolysis activity
-GO:0043140	3'-5' DNA helicase activity
-GO:0043141	5'-3' DNA helicase activity
-GO:0048037	obsolete cofactor binding
-GO:0050662	obsolete coenzyme binding
-GO:0070011	peptidase activity
-GO:0098519	obsolete nucleotide phosphatase activity, acting on free nucleotides
-
-CC
-GO:0030529	ribonucleoprotein complex
-GO:0031513	non-motile cilium
-GO:0043234	protein-containing complex
 
 
 4) 
