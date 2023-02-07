@@ -26,8 +26,6 @@ I needed to also prepare a list of all possible GO annotations of each ontology 
 
 suppressMessages(library(GO.db))
 
-columns(GO.db)
-
 go <- keys(GO.db, keytype="GOID")
 
 df <- select(GO.db, columns=c("GOID","TERM"), keys=go, keytype="GOID")
