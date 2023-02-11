@@ -64,10 +64,12 @@ Before proceeding, I had to be sure that all the GO IDs in the v6.1 C. reinhardt
 
 4) 
 
-OK, so now I have 1) the annotation info file containing all the GO annotations of each v6.1 gene and 2) three files containing the GO IDs and vocabularies of each of the three ontologies. What I did next was write a Bash script that would take these files and spit out a GMT-formatted file, which effectively tells you on each row all the gene IDs which can be annotated by a specific given GO ID. I've uploaded this Bash script into the same folder as this README file, it's just called script.sh. To use the script, it has to be in the same directory which contains both the annotation file (which in my directory is named Cr.annotation_info.txt) and the df_bp/cc/mf_goterms.txt files. You can then use the script like this for each of the df_bp/cc/mf_goterms.txt files to create each of the three GMT files:
+OK, so now I have 1) the annotation info file containing all the GO annotations of each v6.1 gene and 2) three files containing the GO IDs and vocabularies of each of the three ontologies. What I did next was write a Bash script that would take these files and spit out a GMT-formatted file, which effectively tells you on each row all the gene IDs which can be annotated by a specific given GO ID. I've uploaded this Bash script into the same folder as this README file, it's just called script.sh. To use the script, it has to be in the same directory which contains both the annotation file (which in my directory is named Cr.annotation_info.txt) and the df_bp/cc/mf_goterms.txt files. You can then use the script like this for each of the df_bp/cc/mf_goterms.txt files to create each of the GMT files:
 
 script.sh df_bp_goterms.txt > BP.gmt
+
 script.sh df_cc_goterms.txt > CC.gmt
+
 script.sh df_mf_goterms.txt > MF.gmt
 
 
