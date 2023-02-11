@@ -72,5 +72,10 @@ script.sh df_cc_goterms.txt > CC.gmt
 
 script.sh df_mf_goterms.txt > MF.gmt
 
+While it is not in the GO.zip, you can also create a single GMT file containing all the ontologies:
+
+script.sh df_all_goterms.txt > ALL.gmt
+
+You might need this if you want to visualize all your results on Cytoscape.
 
 I wrote this complete explanation based off of what I did from memory. If something doesn't make sense or doesn't work if you're trying to reproduce this yourself or change something, feel free to contact me.
